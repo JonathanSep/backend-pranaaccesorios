@@ -34,8 +34,14 @@ router.post('/', upload.single('image'), async (req, res) => {
         const savedProduct = await newProduct.save();
         res.status(201).json(savedProduct);
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Error al crear producto' });
+        console.error("🔴 ERROR EN CLOUDINARY:", JSON.stringify(error, null, 2));
+        
+        if (!error.message) console.error("🔴 ERROR CRUDO:", error);
+
+        res.status(500).json({ 
+            message: 'Error al guardar producto', 
+            detalle: error.message || error 
+        });
     } 
 });
 
