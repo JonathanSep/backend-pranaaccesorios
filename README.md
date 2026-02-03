@@ -58,6 +58,6 @@ Backend service for the **Prana Accesorios** e-commerce platform. This RESTful A
   "description": "Collar elegante hecho a mano",
   "price": 15000,
   "category": "Joyas",
-  "imageUrl": "[http://example.com/image.jpg](http://example.com/image.jpg)",
+  "imageUrl": "http://example.com/image.jpg",
   "stock": 10
 }
