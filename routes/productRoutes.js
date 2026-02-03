@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Product = require('../models/Product');
+const upload = require('../config/cloudinary');
 
 // @desc    Obtener todos los productos
 // @route   GET /api/products
@@ -13,25 +14,28 @@ router.get('/', async (req, res) => {
     }
 });
 
-// @desc    Crear un producto nuevo
+// @desc    Crear un producto nuevo CON IMAGEN
 // @route   POST /api/products
-router.post('/', async (req, res) => {
+router.post('/', upload.single('image'), async (req, res) => {
     try {
-        const { name, description, price, category, imageUrl, stock } = req.body;
+        const { name, price, category, description } = req.body;
+        
+        // Multer sube la imagen a Cloudinary y nos deja la URL en req.file.path
+        const imageUrl = req.file ? req.file.path : ''; 
 
-        const product = new Product({
+        const newProduct = new Product({
             name,
-            description,
             price,
+            imageUrl, 
             category,
-            imageUrl,
-            stock
+            description,
         });
 
-        const createdProduct = await product.save();
-        res.status(201).json(createdProduct);
+        const savedProduct = await newProduct.save();
+        res.status(201).json(savedProduct);
     } catch (error) {
-        res.status(400).json({ message: 'Error al crear producto', error });
+        console.error(error);
+        res.status(500).json({ message: 'Error al crear producto' });
     }
 });
 
