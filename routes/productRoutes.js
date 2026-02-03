@@ -34,6 +34,7 @@ router.post('/', upload.single('image'), async (req, res) => {
         const savedProduct = await newProduct.save();
         res.status(201).json(savedProduct);
     } catch (error) {
+        console.log("fallo la carga >>>>>>>> ")
         console.error("🔴 ERROR EN CLOUDINARY:", JSON.stringify(error, null, 2));
         
         if (!error.message) console.error("🔴 ERROR CRUDO:", error);
