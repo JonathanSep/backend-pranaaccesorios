@@ -1,10 +1,10 @@
-# Gigi Accesorios API 🛍️
+# Prana Accesorios API 🛍️
 
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-Backend service for the **Gigi Accesorios** e-commerce platform. This RESTful API handles product management, inventory tracking, and database integration, serving data to the React frontend.
+Backend service for the **Prana Accesorios** e-commerce platform. This RESTful API handles product management, inventory tracking, and database integration, serving data to the React frontend.
 
 ## 🚀 Technologies
 
@@ -17,8 +17,8 @@ Backend service for the **Gigi Accesorios** e-commerce platform. This RESTful AP
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/TU_USUARIO/gigi-accesorios-api.git](https://github.com/TU_USUARIO/gigi-accesorios-api.git)
-    cd gigi-accesorios-api
+    git clone [https://github.com/JonathanSep/backend-pranaaccesorios.git](https://github.com/JonathanSep/backend-pranaaccesorios.git)
+    cd backend-pranaaccesorios
     ```
 
 2.  **Install dependencies**
