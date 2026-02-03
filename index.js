@@ -4,10 +4,7 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const productRoutes = require('./routes/productRoutes');
 
-// Cargar variables de entorno
 dotenv.config();
-
-// Conectar a la base de datos
 connectDB();
 
 const app = express();
